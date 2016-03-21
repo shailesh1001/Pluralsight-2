@@ -6,7 +6,7 @@ var example = (function() {
 	var renderer = new THREE.WebGLRenderer()
 	var light = new THREE.PointLight(0xffffff)
 	var camera
-    var sphere
+  var sphere
 	var stats
 
 	function initScene () {
@@ -38,14 +38,15 @@ var example = (function() {
 
 		scene.add(sphere)
 
-		// stats = new Stats()
-		// stats.setMode(0)
+		stats = new Stats();
+        stats.setMode(0);
 
-		// stats.domElement.style.position = 'absolute'
-		// stats.domElement.style.left = "0px"
-		// stats.domElement.style.top="0px"
-		// document.body.appendChild(stats.domElement)
-		render()
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+
+        render();
 
 	}
 
@@ -56,13 +57,15 @@ var example = (function() {
 		renderer.render(scene, camera)
 		requestAnimationFrame(render)
 
-		// stats.update()
+		stats.update()
 	}
 
 	window.onload = initScene
 
 	return {
-		scene: scene
+		scene: scene,
+		sphere: sphere
 	}
+
 }) ()
 
