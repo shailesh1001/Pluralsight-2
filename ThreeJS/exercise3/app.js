@@ -33,12 +33,17 @@ var example = (function() {
 		triangleGeometry.vertices.push(new THREE.Vector3(0.0, 1.0, 0.0))
 		triangleGeometry.vertices.push(new THREE.Vector3(-1.0, -1.0, 0.0))
 		triangleGeometry.vertices.push(new THREE.Vector3(1.0, -1.0, 0.0))
+		//Vector3 (x, y, z) places points around the (0.0, 0.0, 0.0) coordinate of screen.
 
 		triangleGeometry.faces.push(new THREE.Face3(0, 1, 2))
+		//Face3 applies faces to each verticies
 
-		triangleGeometry.faces[0].vertexColors[0] = new THREE.Color(0xFF0000)
-		triangleGeometry.faces[0].vertexColors[1] = new THREE.Color(0x00FF00)
-		triangleGeometry.faces[0].vertexColors[2] = new THREE.Color(0x0000FF)
+		triangleGeometry.faces[0].vertexColors[0] = new THREE.Color(0x00FF00)
+		//top vertex
+		triangleGeometry.faces[0].vertexColors[1] = new THREE.Color(0x0000FF)
+		//lower left vertex
+		triangleGeometry.faces[0].vertexColors[2] = new THREE.Color(0x00FF00)
+		//lower right vertex
 
 		manualGeometry = new THREE.Mesh(triangleGeometry, material)
 
